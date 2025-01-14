@@ -1,12 +1,12 @@
 create table users (
-                       username text not null primary key,
-                       password text not null,
-                       enabled boolean not null
+                       username varchar(50) not null primary key,
+                       password varchar(50) not null,
+                       enabled BOOLEAN not null
 );
 
 create table authorities (
-                             username text not null,
-                             authority text not null,
+                             username varchar(50) not null,
+                             authority varchar(50) not null,
                              constraint fk_authorities_users foreign key(username) references users(username)
 );
 
